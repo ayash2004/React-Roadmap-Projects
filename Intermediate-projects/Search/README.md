@@ -1,12 +1,52 @@
-# React + Vite
+🔍 Search & Filter Users
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React project that allows users to search and filter through a list dynamically. Built with React + Tailwind CSS for a modern UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Features
 
-## Expanding the ESLint configuration
+🔎 Real-time Search – Filter results as you type.
+🎯 Case-insensitive matching – Works regardless of uppercase/lowercase input.
+❌ Clear Search Button – Reset search instantly.
+🎨 Responsive UI – Styled with Tailwind CSS and gradients for a smooth look.
+ 
+ --- 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ Tech Stack
+
+React (Vite) – Frontend framework
+Tailwind CSS – Styling
+JavaScript (ES6+) – Core logic
+
+---
+## ⚡ How to Run Locally
+
+```bash
+
+git clone https://github.com/ayash2004/React-Roadmap-Projects.git
+cd Intermediate-projects/Search
+npm install
+npm run dev
+
+```
+---
+
+🎮 Usage
+
+Type any part of a name in the search box.
+Filtered results will appear instantly.
+Click the ❌ clear button to reset search.
+
+---
+
+📖 What I Learned
+
+Through this project, I practiced and understood:
+
+✅ How to use React state (useState) for dynamic input handling.
+✅ Implementing filter logic on arrays in JavaScript.
+✅ Handling case-insensitive searches with .toLowerCase().
+✅ Adding a clear search button to reset state.
+✅ Styling with Tailwind CSS and creating a modern card UI.
+✅ Managing conditional rendering (showing No users found when results are empty).
