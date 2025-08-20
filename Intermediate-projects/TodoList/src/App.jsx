@@ -1,10 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(()=>{
+    const savedtodo = localStorage.getItem("todos")
+    return savedtodo? JSON.parse(savedtodo) : []; 
+  })
   const [input, setInput] = useState("")
   const [editingIndex, setEditingIndex] = useState(null)
   const [editingText, setEditingText] = useState("")
+
+  useEffect(() =>{
+    localStorage.setItem("todos",JSON.stringify(todos))
+  },[todos])
 
   const addtodo = () => {
     if (input.trim() === "") return;

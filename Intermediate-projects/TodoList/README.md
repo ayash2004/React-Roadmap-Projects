@@ -30,6 +30,8 @@ cd Intermediate-projects/TodoList
 npm install
 npm run dev
 
+```
+
 ---
 
 📖 What I Learned
@@ -44,3 +46,6 @@ Through this project, I practiced and understood:
 ✅ Organizing code for better readability and scalability.
 
 ---
+
+Added LocalStorage Feature
+Todos stay as it is on Refresh
