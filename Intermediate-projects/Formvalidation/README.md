@@ -40,3 +40,72 @@ Through this project, I practiced and understood:
 ✅ Adding auto-dismiss success messages with setTimeout.
 ✅ Styling inputs, errors, and success messages using Tailwind CSS.
 ✅ Improving UX with responsive layouts and hover/focus states.
+
+---
+
+## 🚀 Appwrite Integration
+
+This project now uses **Appwrite** as the backend database for storing validated form data.
+
+### 🔧 Setup Instructions
+
+1. **Install Appwrite SDK**
+   ```bash
+   npm install appwrite
+   ```
+
+2. Configure Appwrite Client
+Create a file appwriteConfig.js:
+
+```bash
+import { Client, Databases } from "appwrite";
+
+const client = new Client();
+client
+  .setEndpoint("https://cloud.appwrite.io/v1") // Add your endpoint here
+  .setProject("YOUR_PROJECT_ID");
+
+export const databases = new Databases(client);
+
+```
+
+3. Database Setup in Appwrite Console
+
+Create a Database (e.g., userForms)
+Create a Collection (e.g., formData)
+
+Add attributes:
+
+name (string)
+email (string)
+password (string or sensitive field)
+
+Set permissions:
+
+For testing → enable Any → Create
+For production → enable Users → Create and use authentication
+
+4. Saving Form Data
+After validation, form data is stored in Appwrite:
+```bash
+await databases.createDocument(
+  DATABASE_ID,
+  COLLECTION_ID,
+  "unique()",
+  { name, email, password }
+);
+```
+---
+
+📌 Notes
+- Have a look at the .env_sample file
+- Make sure to replace DATABASE_ID, COLLECTION_ID, and PROJECT_ID with values from your Appwrite console.
+- For production, use Appwrite Auth to restrict access.
+
+---
+
+🚀 Features Added
+
+✅ Form validation (frontend)
+✅ Appwrite database integration for storing form submissions
+✅ Error handling for failed requests
